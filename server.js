@@ -1,8 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const userRouter = require("./routes/user_api");
-const driverRouter = require("./routes/user_api");
+const userRouter = require("./routes/user-api");
+const requestRouter = require("./routes/request-api");
 const app = express();
 
 // Connection to mongodb
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 // Middleware to handle User request
 app.use('/api/user', userRouter);
 // Middleware to handle driver request
-app.use('/api/driver', driverRouter);
+app.use('/api/request', requestRouter);
 
 
 // port

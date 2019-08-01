@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema();
+const schema = mongoose.Schema;
 
 // Create a schema for an instance in user collection
 const UserSchema = new schema({
@@ -21,7 +21,8 @@ const UserSchema = new schema({
     },
     acceptedRides : {
         type : Array,
-        "default" : []
+        "default" : [],
+        required : false
     }
 });
 

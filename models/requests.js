@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const schema = mongoose.Schema();
+const schema = mongoose.Schema;
 
 const RequestSchema = new schema({
     userId : {
@@ -17,5 +17,5 @@ const RequestSchema = new schema({
 });
 
 // creating a collection for driver documents
-const Request = mongoose.model("driver",RequestSchema);
+const Request = mongoose.model("request",RequestSchema);
 module.exports = Request;
