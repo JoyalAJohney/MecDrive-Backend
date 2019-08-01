@@ -12,9 +12,9 @@ mongoose.connect("mongodb://localhost/mecDrive", {useNewUrlParser : true});
 app.use(bodyParser.json());
 
 // Middleware to handle User request
-app.use('/api/user', userRoutes);
+app.use('/api/user', userRouter);
 // Middleware to handle driver request
-app.use('/api/driver', driverRoutes);
+app.use('/api/driver', driverRouter);
 
 
 // port

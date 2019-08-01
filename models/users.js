@@ -19,6 +19,10 @@ const UserSchema = new schema({
         type : Number,
         required : true
     },
+    acceptedRides : {
+        type : Array,
+        "default" : []
+    }
 });
 
 
