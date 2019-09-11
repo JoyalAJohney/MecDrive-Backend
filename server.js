@@ -13,6 +13,7 @@ app.use(bodyParser.json());
 
 // Middleware to handle User request
 app.use('/api/user', userRouter);
+
 // Middleware to handle driver request
 app.use('/api/request', requestRouter);
 

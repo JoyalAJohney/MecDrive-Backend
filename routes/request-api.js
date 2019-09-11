@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Request = require("../models/requests");
 const User = require("../models/users");
+const mongo = require("mongodb");
 
 
 // POST request(from Users) - adds the requests from users to Request collection
@@ -26,6 +27,16 @@ router.put("/:id", (req,res) => {
     .then((ride) => {
         res.send(ride)
     }).catch((err) => console.log(err));
+});
+
+
+// DELETE request -- ADMIN only!!!
+router.delete("/:id",(req,res) => {
+    var id = req.params.id;
+    Request.deleteOne({ _id: mongo.ObjectID(id) },(err,results) => {
+        res.send(results.result);
+        console.log("deleted");
+    })
 });
 
 module.exports = router;
