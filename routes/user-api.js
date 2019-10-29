@@ -6,7 +6,8 @@ const mongo = require("mongodb");
 // GET request
 router.get("/", (req,res) => {
     User.find({}).then((user) => {
-        res.send(user);
+        res.json(user);
+        console.log("mobile requested");
     });
 });
 
@@ -19,10 +20,22 @@ router.get("/:id",(req,res) => {
     });
 });
 
-// POST request
+//GET request to get details of a particular user
+router.get("/info/:id",(req,res) => {
+    User.findById(req.params.id).then(user => {
+        if(!user)
+            return res.status(404).end();
+        res.json(user).status(200);
+    }).catch((err) => console.log(err));
+})
+
+// POST request -- add user to database
 router.post("/", (req,res) => {
+    console.log(req.body);
     User.create(req.body).then((user) => {
         res.send(user);
+        console.log("user has been added to database");
+        console.log(user);
     }).catch((err) => console.log(err));
 });
 

@@ -17,6 +17,7 @@ router.post("/", (req,res) => {
 router.get("/", (req,res) => {
     Request.find({}).then((request) => {
         res.send(request);
+        console.log("requests have been sent to driver");
     });
 });
 

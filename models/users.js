@@ -16,7 +16,7 @@ const UserSchema = new schema({
         required : true
     },
     phone : {
-        type : Number,
+        type : String,
         required : true
     },
     acceptedRides : {

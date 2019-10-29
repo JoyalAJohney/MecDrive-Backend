@@ -6,7 +6,7 @@ const RequestSchema = new schema({
         type : String,
         required : true
     },
-    location : {
+    location : { 
         type : String,
         required : true
     },
