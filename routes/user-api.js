@@ -17,6 +17,7 @@ router.get("/:id",(req,res) => {
         if(!user)
             return res.status(404).end();
         res.json(user.acceptedRides).status(200);
+        console.log("sending accepted rides list");
     });
 });
 
@@ -26,6 +27,7 @@ router.get("/info/:id",(req,res) => {
         if(!user)
             return res.status(404).end();
         res.json(user).status(200);
+        console.log("sending specific user details");
     }).catch((err) => console.log(err));
 })
 

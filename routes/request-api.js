@@ -26,7 +26,8 @@ router.get("/", (req,res) => {
 router.put("/:id", (req,res) => {
     User.updateOne({_id:req.params.id}, {$push: {"acceptedRides":req.body}})
     .then((ride) => {
-        res.send(ride)
+        console.log("ride offer is added to accepted Rides list");
+        res.send(ride);
     }).catch((err) => console.log(err));
 });
 
